@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JUST PRINT — T-shirts imprimés, paiement à la livraison partout en Algérie." />
+    <title>JUST PRINT | T-MAX 560</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <div class="announcement">LIVRAISON PARTOUT EN ALGÉRIE <span>•</span> PAIEMENT À LA LIVRAISON</div>
+    <header>
+      <a class="brand logo-brand" href="#top" aria-label="JUST PRINT accueil"><img src="assets/just-print-logo.png" alt="JUST PRINT" /><span>JUST PRINT</span></a>
+      <a class="instagram" href="https://www.instagram.com/JUSTPRINT.OFF" target="_blank" rel="noreferrer">@JUSTPRINT.OFF ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">DROP 01 / MOTORSPORT SERIES</p>
+          <h1>PRINT YOUR<br /><em>PASSION.</em></h1>
+          <p class="intro">T-shirts imprimés pour ceux qui vivent à plein régime.</p>
+          <a href="#product" class="button button-dark">VOIR LE MODÈLE <span>↓</span></a>
+        </div>
+        <div class="hero-image"><img src="assets/tmax-black.png" alt="T-shirt noir T-MAX 560, face et dos" /></div>
+      </section>
+
+      <section class="models" id="models">
+        <div class="section-top"><p class="eyebrow">LA COLLECTION</p><h2>CHOISISSEZ VOTRE <em>MODÈLE.</em></h2></div>
+        <div class="model-grid">
+          <button class="model-card active" data-model="classic"><img src="assets/tmax-classic.png" alt="T-shirt T-MAX 560 Classic" /><span>01 / CLASSIC</span><b>T-MAX 560</b></button>
+          <button class="model-card" data-model="evolution"><img src="assets/tmax-evolution.png" alt="Design T-MAX 560 Evolution" /><span>02 / EVOLUTION</span><b>MAXI SCOOTER</b></button>
+          <button class="model-card" data-model="blueprint"><img src="assets/tmax-blueprint.png" alt="T-shirt T-MAX 560 Blueprint" /><span>03 / BLUEPRINT</span><b>T-MAX 560</b></button>
+        </div>
+      </section>
+
+      <section class="product" id="product">
+        <div class="product-visual"><img id="product-image" src="assets/tmax-classic.png" alt="T-shirt T-MAX 560 Classic" /></div>
+        <div class="product-info">
+          <p class="eyebrow">JUST PRINT / DROP 01</p>
+          <h2>T-SHIRT<br />YAMAHA <em id="product-title">T‑MAX 560</em></h2>
+          <p class="price">3 000 <small>DA</small></p>
+          <p class="description" id="product-description">Impression T‑MAX 560 sur l'avant et le dos. Choisissez votre taille puis commandez en quelques secondes.</p>
+          <a class="change-model" href="#models">↖ CHANGER DE MODÈLE</a>
+
+          <div class="choice-block">
+            <span class="label">TAILLE</span>
+            <div class="sizes" id="sizes">
+              <button data-size="S">S</button><button data-size="M" class="active">M</button><button data-size="L">L</button><button data-size="XL">XL</button><button data-size="XXL">XXL</button>
+            </div>
+          </div>
+          <a href="#order" class="button button-blue">COMMANDER MAINTENANT <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="order-section" id="order">
+        <div class="order-heading">
+          <p class="eyebrow">PAIEMENT À LA LIVRAISON</p>
+          <h2>FINALISER<br />MA <em>COMMANDE.</em></h2>
+          <p>Remplissez vos informations. Vous payez seulement quand votre commande arrive.</p>
+          <div class="trust"><span>✓ Livraison nationale</span><span>✓ Sans paiement en ligne</span><span>✓ Confirmation rapide</span></div>
+        </div>
+        <form id="order-form" novalidate>
+          <div class="product-summary"><img id="summary-image" src="assets/tmax-classic.png" alt="" /><div><b id="summary-name">T-SHIRT YAMAHA T‑MAX 560</b><span id="summary-variant">Classic · M</span></div><strong>3 000 DA</strong></div>
+          <div class="field-grid">
+            <label>PRÉNOM<input name="firstName" required autocomplete="given-name" placeholder="Votre prénom" /></label>
+            <label>NOM<input name="lastName" required autocomplete="family-name" placeholder="Votre nom" /></label>
+          </div>
+          <label>NUMÉRO DE TÉLÉPHONE<input name="phone" required inputmode="tel" autocomplete="tel" placeholder="05 XX XX XX XX" /></label>
+          <div class="field-grid">
+            <label>WILAYA<select name="wilaya" id="wilaya" required><option value="">Choisissez votre wilaya</option></select></label>
+            <label>TYPE DE LIVRAISON<select name="delivery" id="delivery" required><option value="home">À domicile</option><option value="stopdesk">Stop desk</option></select></label>
+          </div>
+          <label>COMMUNE<select name="commune" id="commune" required disabled><option value="">Choisissez d’abord votre wilaya</option></select></label>
+          <div class="total-box"><div><span>Produit</span><b>3 000 DA</b></div><div><span id="delivery-label">Livraison</span><b id="delivery-price">—</b></div><div class="grand-total"><span>TOTAL À PAYER</span><b id="grand-total">3 000 DA</b></div></div>
+          <p class="form-note">En confirmant, vous acceptez d’être contacté(e) pour confirmer votre commande.</p>
+          <button class="button button-dark submit" type="submit">CONFIRMER LA COMMANDE <span>→</span></button>
+          <p class="form-error" id="form-error" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <div class="order-confirmation-overlay" id="order-confirmation-overlay">
+      <div class="order-confirmation-box">
+        <span class="order-confirmation-check">✓</span>
+        <h2>Your order has been confirmed successfully</h2>
+      </div>
+    </div>
+    <footer><a class="brand logo-brand" href="#top"><img src="assets/just-print-logo.png" alt="JUST PRINT" /><span>JUST PRINT</span></a><span>© 2026 JUST PRINT</span><a href="https://www.instagram.com/JUSTPRINT.OFF" target="_blank" rel="noreferrer">INSTAGRAM ↗</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
