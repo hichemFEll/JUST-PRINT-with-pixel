@@ -64,6 +64,18 @@ async function loadCommunes() {
     communeSelect.innerHTML = '<option value="">Communes unavailable - refresh the page</option>';
   }
 }
+let leadFired = false;
+document.querySelector('#order-form').addEventListener('input', () => {
+  if (leadFired) return;
+  leadFired = true;
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {
+      content_name: selectedProduct.name,
+      currency: 'DZD',
+      value: productPrice
+    });
+  }
+}, { once: false });
 document.querySelector('#sizes').addEventListener('click', event => { if (event.target.tagName !== 'BUTTON') return; document.querySelectorAll('#sizes button').forEach(button => button.classList.remove('active')); event.target.classList.add('active'); chosenSize = event.target.dataset.size; updateVariant(); });
 wilayaSelect.addEventListener('change', () => { updateDelivery(); updateCommunes(); });
 document.querySelector('#delivery').addEventListener('change', updateDelivery);
@@ -89,6 +101,14 @@ document.querySelector('#order-form').addEventListener('submit', event => {
   const sendOrder = fetch(googleSheetsEndpoint, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(order)});
   Promise.all([sendOrder, wait(3000)])
     .then(() => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          value: order.total,
+          currency: 'DZD',
+          content_name: order.product,
+          content_type: 'product'
+        });
+      }
       form.reset(); updateDelivery(); updateCommunes();
       document.querySelector('#order-confirmation-overlay').classList.add('visible');
     })
